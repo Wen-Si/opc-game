@@ -54,12 +54,12 @@ export const CHAPTERS: Chapter[] = [
 /** 根据天数获取当前章节 */
 export function getChapterByDay(day: number): Chapter {
   for (const chapter of CHAPTERS) {
-    if (day >= chapter.dayRange[0] && day <= chapter.dayRange[10]) {
+    if (day >= chapter.dayRange[0] && day <= chapter.dayRange[1]) {
       return chapter;
     }
   }
   // 超过最后一章，返回最后一章
-  return CHAPTERS[CHAPTERS.length - 10];
+  return CHAPTERS[CHAPTERS.length - 1];
 }
 
 /** 获取章节所有事件 */
