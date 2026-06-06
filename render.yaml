@@ -3,6 +3,8 @@ services:
     name: opc-game-server
     runtime: node
     plan: free
+    repo: https://github.com/Wen-Si/opc-game
+    branch: main
     buildCommand: cd server && npm install && npm run build
     startCommand: cd server && npm start
     envVars:
@@ -10,3 +12,4 @@ services:
         value: production
       - key: PORT
         value: 10000
+    healthCheckPath: /api/health
